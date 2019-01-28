@@ -1,9 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDom from 'react-dom';
 import Babel from 'babel';
 import 'css/style.css';
 
+function renderSearchContainer() {
+    return (
+        <div>
+            <div id="search-box"></div>
+        </div>
+    );
+}
+
 ReactDOM.render(
-    <p>Test</p>,
+    <renderSearchContainer />,
     document.getElementById('app')
 );
