@@ -5,15 +5,34 @@
     <meta charset="UTF-8">
     <meta name='viewport' content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <!-- <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/babel-standalone/babel.js"></script> -->
-    <script src="js/index.js"></script>
+    <script src="https://unpkg.com/babel-standalone/babel.js"></script>
+    <!-- <script src="js/index.jsx"></script> -->
     <title>React GitHub Repository Finder</title>
 </head>
 
 <body>
-    <div id="app"></div>
+    <div id="app">
+        
+    </div>
+
+    <script type="text/babel">
+        function RenderSearchContainer() {
+            return (
+                <div>
+                    <div id="search-box">
+                        <input type="text" placeholder="Search"></input>
+                        <button type="submit">Search</button>
+                    </div>
+                </div>
+            );
+        }
+        ReactDOM.render(
+            <RenderSearchContainer />,
+            document.getElementById('app')
+        );
+    </script>
 </body>
 
 </html>
