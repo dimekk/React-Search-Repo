@@ -8,10 +8,8 @@
     <script src="https://unpkg.com/react/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/babel-standalone/babel.js"></script>
-    <!-- <script src="js/index.jsx"></script> -->
     <title>React GitHub Repository Finder</title>
 </head>
-
 <body>
     <div id="app">
         
@@ -22,8 +20,9 @@
             return (
                 <div>
                     <div id="search-box">
-                        <input type="text" placeholder="Search"></input>
-                        <button type="submit">Search</button>
+                        <a href="http://github.com/"><img id="logogh" src="img/logogh.png" /></a>
+                        <input id="search-input" type="text" placeholder="Search or jump to..."></input>
+                        <button id="search-submit" type="submit">Search</button>
                     </div>
                     <div class="searchResults">
                         <div class="result">User, Stars, Repository</div>    
@@ -38,5 +37,4 @@
         );
     </script>
 </body>
-
 </html>
