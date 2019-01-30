@@ -42,6 +42,7 @@ body {
   }
 #search-submit {
     height: 25px;
+    border: none;
 }
 #logogh {
     float: left;
