@@ -6,16 +6,28 @@ class App extends Component {
 
   render() {
     return (
-        <div>
-            <div id="search-box">
-                <a href="http://github.com/"><img id="logogh" src="logogh.png" /></a>
-                <input id="search-input" type="text" placeholder="Search or jump to..."></input>
-                <button id="search-submit" type="submit" onClick="">Search</button>
+      <section class="main-content">
+        <div class="searcher-container">
+            <div id="search-box" class="searcher-header">
+              <a href="http://github.com/"><img id="logogh" src="logogh.png" /></a>
+              <form method="get">
+                <input id="search-input" type="text" name="search" placeholder="Search or jump to..."></input>
+                <input id="search-submit" type="submit" name="submit-phrase" onClick="" value=""></input>                
+              </form>
             </div>
-            <div class="searchResults">
-                <div class="result">User, Stars, Repository</div>    
+            <div class="result-container">
+                <div class="result-info">
+                    <p id="result-avatar">Author:</p>
+                    <p id="result-name">Repository name:</p>
+                    <p id="result-stars">Stars:</p>
+                </div>
+                <div class="searchResults">
+                  <div class="result">User, Stars, Repository</div> 
+                </div>
             </div>
         </div>
+    </section>          
+        
     );
 }
 
