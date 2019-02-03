@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+//import {RenderSearchBox} from './RenderSearchBox';
 import './App.css';
 
-class App extends Component {
-
+export class App extends Component {
   render() {
     return (
       <section class="main-content">
         <div class="searcher-container">
+            {/* <RenderSearchBox /> */}
             <div id="search-box" class="searcher-header">
-              <a href="http://github.com/"><img id="logogh" src="logogh.png" /></a>
-              <form method="get">
-                <input id="search-input" type="text" name="search" placeholder="Search or jump to..."></input>
-                <input id="search-submit" type="submit" name="submit-phrase" onClick="" value=""></input>                
-              </form>
-            </div>
+                    <a href="http://github.com/"><img id="logogh" alt="logo-github" src="logogh.png" /></a>
+                    <form method="get">
+                    <input id="search-input" type="text" name="search" placeholder="Search or jump to..."></input>
+                    <input id="search-submit" type="submit" name="submit-phrase" onClick="{submitSearch}" value=""></input>                
+                    </form>
+                </div>
+            
             <div class="result-container">
                 <div class="result-info">
                     <p id="result-avatar">Author:</p>
@@ -26,20 +27,19 @@ class App extends Component {
                 </div>
             </div>
         </div>
-    </section>          
-        
+    </section>       
     );
-}
+};
 
         // var inputSearch = document.getElementById("search-input");
         // var inputValue = inputSearch.value();
-
-        // function submitSearch() {
-        //     console.log('Searching for repositories...');
-        //     function prevDefault(e) {
-        //         e.preventDefault();
-        //     };
-        // }
+submitSearch() {
+    console.log('Searching for repositories...');
+    function prevDefault(e) {
+        e.preventDefault();
+    };
+}
+        
       //   function loadRepos() {
       //     return function(dispatch) {
       //         return axios
