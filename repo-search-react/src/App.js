@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
-//import {RenderSearchBox} from './RenderSearchBox';
+import { Router, browserHistory } from 'react-router';
+import { Provider } from 'react-redux';
+import axios from 'axios';
+import routes from './routes';
+import configureStore from './configureStore';
+import { loadResults } from './reposAction';
+import { RenderSearchBox } from './RenderSearchBox';
+import { SearchResults } from './SeachResults';
 import './App.css';
 
 export class App extends Component {  
@@ -15,7 +22,7 @@ export class App extends Component {
                     <input id="search-submit" type="submit" name="submit-phrase" onClick={submitSearch} value="Search"></input>                
                     </form>
                 </div>
-            {/* <RenderResultsList /> */}
+            {/* <SearchResults /> */}
             <div class="result-container">
                 <div class="result-info">
                     <p id="result-avatar">Author:</p>
@@ -51,16 +58,16 @@ export function loadResults() {
   }
 }
 
-      // let currValue;
-      // function onChange() {
-      //     let prevValue = currValue;
-      //     currValue = store.getState().user;
+let currValue;
+export function onChange() {
+    let prevValue = currValue;
+    currValue = store.getState().user;
 
-      //     if(prevValue != currValue) {
-      //         store.dispatch(loadRepos(repos.data));
-              
-      //     }
-      // }  
+    if(prevValue != currValue) {
+        store.dispatch(loadRepos(repos.data));
+        
+    }
+}  
 
 
 export default App;
