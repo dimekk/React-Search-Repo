@@ -5,7 +5,6 @@ import axios from 'axios';
 //import { loadResults } from './reposAction';
 import { RenderSearchBox } from './RenderSearchBox';
 import { SearchResults } from './SeachResults';
-import './App.css';
 
 export class App extends Component {  
   render() {    
