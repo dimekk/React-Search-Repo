@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 //import {RenderSearchBox} from './RenderSearchBox';
 import './App.css';
 
-export class App extends Component {
-  render() {
+export class App extends Component {  
+  render() {    
     return (
       <section class="main-content">
         <div class="search-container">
@@ -12,7 +12,7 @@ export class App extends Component {
                     <a href="http://github.com/"><img id="logogh" alt="logo-github" src="logogh.png" /></a>
                     <form method="get">
                     <input id="search-input" type="text" name="search" placeholder="Search or jump to..."></input>
-                    <input id="search-submit" type="submit" name="submit-phrase" onClick="{submitSearch}" value="Search"></input>                
+                    <input id="search-submit" type="submit" name="submit-phrase" onClick={submitSearch} value="Search"></input>                
                     </form>
                 </div>
             {/* <RenderResultsList /> */}
@@ -29,30 +29,27 @@ export class App extends Component {
         </div>
     </section>     
     );
-};
-
-        // var inputSearch = document.getElementById("search-input");
-        // var inputValue = inputSearch.value();
-submitSearch() {
-    console.log('Searching for repositories...');
-    function prevDefault(e) {
-        e.preventDefault();
-    };
+}; 
 }
-        
-      //   function loadRepos() {
-      //     return function(dispatch) {
-      //         return axios
-      //             .get("https://api.github.com/search/repositories?q=" + inputValue + "&page=1&per_page=10")
-      //             .then(repos => {
-      //                 dispatch(loadReposSuccess(repos.data));
-      //                 console.warn(repos.data);
-      //             })
-      //             .catch(err => {
-      //                 throw err;
-      //             });
-      //     };
-      // }     
+export function submitSearch(e) {
+  e.preventDefault();
+  console.log('Searching for repositories...');
+}
+let inputSearch = document.getElementById("search-input");
+let inputValue = inputSearch.value();
+
+export function loadResults() {
+  return function(dispatch) {
+    return axios
+      .get("https://api.github.com/search/repositories?q=" + inputValue + "&page=1&per_page=10")
+      .then(repos => {
+        dispatch(loadResultsSucces(repos.data));
+      })
+      .catch(err => {
+        throw err;
+      });
+  }
+}
 
       // let currValue;
       // function onChange() {
@@ -63,7 +60,7 @@ submitSearch() {
       //         store.dispatch(loadRepos(repos.data));
               
       //     }
-      // }   
-}
+      // }  
+
 
 export default App;

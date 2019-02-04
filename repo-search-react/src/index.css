@@ -57,6 +57,7 @@ body {
   color: #88908D;
 }
 #search-submit {
+  font-family: monospace;
   width: 100px;
   height: 43px;
   cursor: pointer;
