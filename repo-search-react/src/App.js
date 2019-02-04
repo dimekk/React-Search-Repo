@@ -6,16 +6,16 @@ export class App extends Component {
   render() {
     return (
       <section class="main-content">
-        <div class="searcher-container">
+        <div class="search-container">
             {/* <RenderSearchBox /> */}
-            <div id="search-box" class="searcher-header">
+            <div id="search-box" class="search-header">
                     <a href="http://github.com/"><img id="logogh" alt="logo-github" src="logogh.png" /></a>
                     <form method="get">
                     <input id="search-input" type="text" name="search" placeholder="Search or jump to..."></input>
-                    <input id="search-submit" type="submit" name="submit-phrase" onClick="{submitSearch}" value=""></input>                
+                    <input id="search-submit" type="submit" name="submit-phrase" onClick="{submitSearch}" value="Search"></input>                
                     </form>
                 </div>
-            
+            {/* <RenderResultsList /> */}
             <div class="result-container">
                 <div class="result-info">
                     <p id="result-avatar">Author:</p>
@@ -23,11 +23,11 @@ export class App extends Component {
                     <p id="result-stars">Stars:</p>
                 </div>
                 <div class="searchResults">
-                  <div class="result">User, Stars, Repository</div> 
+                   
                 </div>
             </div>
         </div>
-    </section>       
+    </section>     
     );
 };
 
