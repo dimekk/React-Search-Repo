@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { LoadRepos } from './LoadRepos';
+import { LoadRepos } from './LoadResults';
 import axios from 'axios';
 
 type Props = {
@@ -46,15 +46,14 @@ type Props = {
         event.preventDefault();
         if (!this.state.inputValue) {return;}
         console.log(this.state.inputValue);
-        //this.props.onSubmit(this.state.inputValue);
-        
+        return this.state.inputValue;        
     }
     
     render() {
         return (
             <div id="search-box" class="searcher-header">
                     <a href="http://github.com/"><img id="logogh" alt="logo-github" src="logogh.png" /></a>
-                    <form method="get" onSubmit={this.handleOnSubmit}>
+                    <form onSubmit={this.handleOnSubmit}>
                         <input id="search-input" type="text" name="search" placeholder="Search or jump to..." value={this.state.inputValue} onChange={this.handleOnChange} ></input>
                         <input id="search-submit" type="submit" name="submit-phrase" value=""></input>                
                     </form>
