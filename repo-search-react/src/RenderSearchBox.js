@@ -45,7 +45,9 @@ type Props = {
     handleOnSubmit = (event: Object): void => {
         event.preventDefault();
         if (!this.state.inputValue) {return;}
-        this.props.onSubmit(this.state.inputValue);
+        console.log(this.state.inputValue);
+        //this.props.onSubmit(this.state.inputValue);
+        
     }
     
     render() {
@@ -53,7 +55,7 @@ type Props = {
             <div id="search-box" class="searcher-header">
                     <a href="http://github.com/"><img id="logogh" alt="logo-github" src="logogh.png" /></a>
                     <form method="get" onSubmit={this.handleOnSubmit}>
-                        <input id="search-input" type="text" name="search" placeholder="Search or jump to..." value={this.state.inputValue}></input>
+                        <input id="search-input" type="text" name="search" placeholder="Search or jump to..." value={this.state.inputValue} onChange={this.handleOnChange} ></input>
                         <input id="search-submit" type="submit" name="submit-phrase" value=""></input>                
                     </form>
                 </div>
