@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 //import { Router, browserHistory } from 'react-router';
 //import { Provider } from 'react-redux';
-import axios from 'axios';
 //import { loadResults } from './reposAction';
-import { RenderSearchBox } from './RenderSearchBox';
+//import { LoadRepos, RndrSearchbox } from './LoadRepos';
 import { SearchResults } from './SeachResults';
+import { RenderSearchBox } from './RenderSearchBox';
+
 
 export class App extends Component {  
   render() {    
@@ -20,31 +21,6 @@ export class App extends Component {
     );
 }; 
 }
-export function submitSearch(e) {
-  e.preventDefault();
-  console.log('Searching for repositories...');
-
-  let inputSearch = document.getElementById("search-input");
-  let inputValue = inputSearch.value();
-
-  // return function loadResults() {
-  //   return function(dispatch) {
-  //     return axios
-  //       .get("https://api.github.com/search/repositories?q=" + inputValue + "&page=1&per_page=10")
-  //       .then(repos => {
-  //         console.log("dispatch(loadResultsSucces(repos.data));")
-  //       })
-  //       .catch(err => {
-  //         throw err;
-  //       });
-  //   }
-  // }
-}
-
-//
-
-
-
 // let currValue;
 // export function onChange() {
 //     let prevValue = currValue;
