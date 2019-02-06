@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import curry from 'lodash/fp/curry';
 import map from 'lodash/fp/map';
 import Repo from './Repo';
-import { RenderSearchBox } from './RenderSearchBox';
 
 type Props = {
     entities: Object,
@@ -10,9 +9,12 @@ type Props = {
 };
 
 const renderSearchResults = curry((entities, item) => {
+    console.log('Success');
     const {id} = entities[item];
     return (
+      <li key={id} className="search-results">
         <Repo {...entities[id]} />
+      </li>
     );
 });
 
@@ -20,15 +22,8 @@ function SearchResults({entities, ids}: Props) {
     return (
       <ul>
         {map(renderSearchResults(entities), ids)}
-      </ul>
+      </ul>      
     );
 }
 
 export default SearchResults;
-// export class LoadResults {
-//     render() {
-//         return (
-           
-//         );  
-//     }
-// }

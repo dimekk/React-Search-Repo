@@ -44,9 +44,14 @@ type Props = {
     
     handleOnSubmit = (event: Object): void => {
         event.preventDefault();
-        if (!this.state.inputValue) {return;}
-        console.log(this.state.inputValue);
-        return this.state.inputValue;        
+        if (!this.state.inputValue) {return;}   
+
+        const { inputValue } = this.state         
+            return axios
+                .get(`https://api.github.com/search/repositories?q=${inputValue}/repos`)
+                .then(repos => {
+                console.log(this.state.inputValue);                
+            })    
     }
     
     render() {
@@ -60,27 +65,7 @@ type Props = {
                 </div>
         );  
     } 
-    submitSearch = (e) => {
-        e.preventDefault();
-        console.log('Searching for repositories...');
-
-        const { inputValue } = this.state
-      
-        let inputSearch = document.getElementById("search-input");
-      
-        return function loadResults(inputValue) {
-          return function(dispatch) {
-            return axios
-              .get(`https://api.github.com/search/repositories?q=${inputValue}/repos`)
-              .then(repos => {
-                console.log("dispatch(loadResultsSucces(repos.data));")
-              })
-              .catch(err => {
-                throw err;
-              });
-          }
-        }
-      };      
+         
     }
 
 
