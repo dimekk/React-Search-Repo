@@ -64,8 +64,7 @@ type Props = {
                     </form>
                 </div>
         );  
-    } 
-         
-    }
+    }          
+}
 
 
