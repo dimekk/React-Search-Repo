@@ -1,7 +1,7 @@
 # React-Repo-Search
 ### Search through GitHub repositories with ReactJS.
 
-### How to set:
+#### How to set:
 
 1. npm install
 
