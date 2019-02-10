@@ -26,11 +26,12 @@ export class SearchBox extends React.Component {
                 { this.state.repositories.map( ( item, index ) => (
                     <li class="result" key={ index }>
                         <div class="author">
+                            <p class="box-title">Author</p>
                             <img class="avatar" src={item.owner.avatar_url} alt=""></img>                     
                             <p className="repo-owner"><a href={item.owner.url}>{item.owner.login}</a></p>
+                            <p className="stars">Stars: {item.stargazers_count}</p>
                         </div>                        
-                        <div className="content">                        
-                            <p className="stars">{item.stargazers_count}</p> 
+                        <div className="content">  
                             <div class="repoName" ><a href={item.url}>{ item.name }</a></div>                            
                             <div className="description">{item.description}</div>
                         </div>                    
