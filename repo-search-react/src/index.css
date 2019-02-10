@@ -2,9 +2,6 @@
   margin: 0 auto;
 }
 
-body {
-  max-width: 900px;
-}
 .main-content {
   margin-top: 20px;
 }
@@ -12,15 +9,11 @@ body {
   /* width: 100%; */
   text-align: center;
 }
-#app div {
+.main {
+  width: 1000px;
   display: inline-block;
 }
-.search-container {
-  width: 900px;
-  height: auto;
-}
 #search-box {
-  width: 98.5%;
   height: 90px;
   border-radius: 15px 15px 0 0;
   background-color: #231F20;
@@ -29,6 +22,7 @@ body {
 #search-box a {
   line-height: 64px;
 }
+
 #search-input {
   border: none;
   padding-top: 15px;
@@ -57,44 +51,110 @@ body {
   color: #88908D;
 }
 #search-submit {
-  font-family: monospace;
-  width: 100px;
-  height: 43px;
-  cursor: pointer;
-  float: right;
-  margin: 20px 20px 0 0;
-  border: none;
+  width: 50px;
+    height: 50px;
+    cursor: pointer;
+    float: right;
+    margin: 20px 40px 0 0;
+    background: url(img/search.png);
+    background-position: center;
+    background-size: cover;
+    border: none;
 }
 #logogh {
   float: left;
-  width: 64px;    
+  width: 64px;   
+  margin-top: 10px; 
 }
 .result-container {
   width: 100%;
   height: auto;
   font-family: monospace;
-  background: #818488;
+  background: #2b3d53;
 }
 .result-info {
   width: 100%;
   height: 20px;
   color: #eeeff1;
+  display: flex;
+  justify-content: space-between;
   font-weight: 700;
   font-family: monospace;
   padding: 10px 0 5px 10px;
   border-bottom: 1px solid #eeeff1;
 }
-.avatar {
-  width: 8.9%;
-  display: inline-block;
-  padding-left: 15px;
-  border-right: 1.5px solid #eeeff1;
+.result {
+  width: 100%;
+  line-height: 50px;
+  padding-top: 15px;
+  margin-bottom: 2px;
+  height: auto;
+  background: #34495e;
+  text-align: center;
+  font-weight: 700;
 }
-#result-name {
-  width: 32%;
+.result * {
+  border: 1px solid red;
+}
+.result-list {
+  width: 100%;
+  color: #eeeff1;
+  background: #12283E;
+  padding: 0;
+}
+.result-list li {
+  list-style: none;
+}
+.result-list a {
+  text-decoration: none;
+  color: #eeeff1;
+}
+.result-list .avatar {
+  width: 50px;
+  height: 50px;
+  float: left;
+  display: block;
+  padding-left: 30px;  
+  padding-right: 35px;
+}
+.result-list .repo-owner {
+  line-height: 50px;
+  display: block;
+  float: right;
+  text-align: left;
+}
+.result-list .repoName{
+  width: 20%;
   display: inline-block;
 }
-#result-stars { 
-  width: 32%;
+.result-list .stars {
+  width: 10%;
+  display: inline-block;
+}
+.result-list .description {
+  width: 45%;
+  display: inline-block;
+}
+.result .author {
+  display: inline-block;
+  float: left;
+}
+#result-avatar {
+  width: 16.1%;
+  display: inline-block;
+  border-right: 1.5px solid 
+}
+#result-stars {
+  width: 10%;
+  display: inline-block;
+  border-right: 1.5px solid 
+}
+#result-reponame {
+  width: 20%;
+  display: inline-block;
+  border-right: 1.5px solid 
+}
+#result-description {
+  width: 45%;
   display: inline-block;
 }

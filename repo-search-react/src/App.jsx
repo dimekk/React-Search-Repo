@@ -7,11 +7,11 @@ export class App extends React.Component {
 
  render() {    
     return (
-      <div>
+      <div class="main">
         <Header />
         <section class="main-content">
           <div class="search-container">
-          <SearchBox />
+          <SearchBox />          
           </div>
         </section>
       </div>

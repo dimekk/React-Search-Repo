@@ -1,4 +1,5 @@
 import * as React from "react";
+import { ResultContainer } from './ResultContainer';
 
 let searchItem;
 export class SearchBox extends React.Component {
@@ -11,32 +12,39 @@ export class SearchBox extends React.Component {
 
     render() {
         return(
-            <div>
+            <section>
+            <div id="search-box" class="searcher-header">
+            <a href="http://github.com/"><img id="logogh" alt="logo-github" src="logogh.png" /></a>
                 <form>
-                    <input type="text" className="searchbox" ref={(input) => { this.searchBox = input; }}/>
-                    <button onClick={this.onClick}>Search</button>
-                </form>
-                <h2>Search results:</h2>
+                    <input id="search-input" type="text" placeholder="Search or jump to..." ref={(input) => { this.searchBox = input; }}/>
+                    <button id="search-submit" onClick={this.onClick}></button>
+                </form>            
+            </div>
+            <div class="resulttest">
+                <ResultContainer />
                 <ul class="result-list">
                 { this.state.repositories.map( ( item, index ) => (
                     <li class="result" key={ index }>
-                        <img class="avatar" src={item.owner.avatar_url} alt=""></img>
-                        <div className="content">
-                            <li class="repoName" ><a href={item.url}>{ item.name }</a></li>
-                            <p className="header repo-owner"><a href={item.owner.url}>{item.owner.login}</a></p>
-                            {/* <div className="description">{description}</div> */}
+                        <div class="author">
+                            <img class="avatar" src={item.owner.avatar_url} alt=""></img>                     
+                            <p className="repo-owner"><a href={item.owner.url}>{item.owner.login}</a></p>
+                        </div>                        
+                        <div className="content">                        
                             <p className="stars">{item.stargazers_count}</p> 
+                            <div class="repoName" ><a href={item.url}>{ item.name }</a></div>                            
+                            <div className="description">{item.description}</div>
                         </div>                    
                     </li>                   
                 )) }
                 </ul>
             </div>
+        </section>   
         );
     }
 
     onClick(e) {
         searchItem = this.searchBox.value;
-        let endpoint = 'https://api.github.com/search/repositories?sort=full_name&order=desc&q=' + searchItem;
+        let endpoint = 'https://api.github.com/search/repositories?sort=item.owner.login&order=desc&q=' + searchItem;
         console.log(searchItem);
         fetch(endpoint)
             .then(blob => blob.json())

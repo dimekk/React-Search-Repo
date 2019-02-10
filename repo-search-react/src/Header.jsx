@@ -1,11 +1,11 @@
 import * as React from 'react';
+import { SearchBox } from './SearchBox';
 
 export const Header = () => {
     return (
-        <div id="search-box" class="searcher-header">
-                <a href="http://github.com/"><img id="logogh" alt="logo-github" src="logogh.png" /></a>
-                <h1 id="header-title">GitHub Repo Search React App</h1>
-            </div>
+        <div class="header">
+                
+        </div>
     );  
 };
 
