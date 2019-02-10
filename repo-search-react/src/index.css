@@ -84,7 +84,7 @@ body {
   padding: 10px 0 5px 10px;
   border-bottom: 1px solid #eeeff1;
 }
-#result-avatar {
+.avatar {
   width: 8.9%;
   display: inline-block;
   padding-left: 15px;

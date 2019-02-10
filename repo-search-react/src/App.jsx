@@ -1,19 +1,20 @@
 import * as React from 'react';
-import { connect } from 'react-redux';
-import { getFilteredRepos } from './selectors/getFilteredRepos';
+import { Header } from './Header';
+import { SearchBox } from './SearchBox';
+import './index.css';
 
-export class App extends Component {  
-  render() {    
+export class App extends React.Component {  
+
+ render() {    
     return (
-      <section class="main-content">
-        <div class="search-container">
-
-            
-        </div>
-    </section>     
+      <div>
+        <Header />
+        <section class="main-content">
+          <div class="search-container">
+          <SearchBox />
+          </div>
+        </section>
+      </div>
     );
-  }; 
+  }
 }
-
-
-export default App;
